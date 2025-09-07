@@ -15,6 +15,7 @@
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build",
     "build:server": "vite build --config vite.config.server.ts",
+    "build:netlify": "npm run build:client",
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@hookform/resolvers": "^5.2.1",
+    "@netlify/functions": "^4.2.5",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-alert-dialog": "^1.1.14",
     "@radix-ui/react-aspect-ratio": "^1.1.7",

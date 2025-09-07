@@ -5,7 +5,7 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "/Atrape/", // 👈 ADD THIS LINE
+  base: "/", // Updated for Netlify deployment
   server: {
     host: "::",
     port: 8080,
