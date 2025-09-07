@@ -1,0 +1,53 @@
+[build]
+  publish = "dist/spa"
+  command = "npm run build:client"
+  functions = "netlify/functions"
+
+[dev]
+  command = "npm run dev"
+  port = 8080
+
+# API routes to Netlify Functions
+[[redirects]]
+  from = "/api/ping"
+  to = "/.netlify/functions/ping"
+  status = 200
+
+[[redirects]]
+  from = "/api/demo"
+  to = "/.netlify/functions/demo"
+  status = 200
+
+[[redirects]]
+  from = "/api/items/*"
+  to = "/.netlify/functions/items"
+  status = 200
+
+[[redirects]]
+  from = "/api/items"
+  to = "/.netlify/functions/items"
+  status = 200
+
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/.netlify/functions/auth"
+  status = 200
+
+[[redirects]]
+  from = "/api/cart/*"
+  to = "/.netlify/functions/cart"
+  status = 200
+
+[[redirects]]
+  from = "/api/cart"
+  to = "/.netlify/functions/cart"
+  status = 200
+
+# SPA routing - redirect all other routes to index.html
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build.environment]
+  NODE_VERSION = "18"
