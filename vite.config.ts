@@ -5,6 +5,7 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  base: "/Atrape/", // 👈 ADD THIS LINE
   server: {
     host: "::",
     port: 8080,
@@ -31,7 +32,6 @@ function expressPlugin(): Plugin {
     apply: "serve", // Only apply during development (serve mode)
     configureServer(server) {
       const app = createServer();
-
       server.middlewares.use(app);
     },
   };
